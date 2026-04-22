@@ -7,7 +7,11 @@ export function serveStatic(app: express.Express) {
 
   app.use(express.static(distPath));
 
-  app.get("/*", (_req: Request, res: Response) => {
-    res.sendFile(path.join(distPath, "index.html"));
-  });
+  // app.get("/*", (_req: Request, res: Response) => {
+  //   res.sendFile(path.join(distPath, "index.html"));
+  // });
+
+  app.use((req: Request, res: Response) => {
+  res.sendFile(path.join(distPath, "index.html"));
+});
 }
