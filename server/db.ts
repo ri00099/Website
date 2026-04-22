@@ -3,7 +3,6 @@ import pg from "pg";
 import * as schema from "@shared/schema";
 
 const { Pool } = pg;
-console.log(DATABASE_URL)
 
 if (!process.env.DATABASE_URL) {
   throw new Error(
